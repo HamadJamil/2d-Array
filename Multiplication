@@ -1,0 +1,83 @@
+
+#include<stdio.h>
+    // Function To print Array
+    void print_Arrays(int r, int c, int store[r][c]);
+    // Function To Take Input for Array
+    void input_Array(int numarr , int r, int c, int store[r][c]);
+    int main (){
+
+    //Taking Input of order of Fist Matrix
+        int m;
+        printf("Enter The Number Of  rows Of 1st Matrix\n");
+        scanf("%d",&m);
+        int n;
+        printf("Enter The Number Of  columns Of 2nd Matrix\n");
+        scanf("%d",&n);
+
+        int a[m][n];         //Declaring variable For 1st matrix
+
+    //Taking Input of order of Second Matrix
+        int p;
+        printf("Enter The Number Of  rows Of 1st Matrix\n");
+        scanf("%d",&p);
+        int q;
+        printf("Enter The Number Of  columns Of 1st Matrix\n");
+        scanf("%d",&q);
+
+        int b[p][q];            //Declaring variable For 2nd matrix
+        int res[m][q];        //Declaring variable For resultant matrix
+
+        system("cls");         //Clearing the Screen
+
+        if( n == p){
+
+        //Taking Input of Elements of 1st Array
+       input_Array(1 ,  m , n , a);
+
+        //Taking Input of Elements of 2nd Array
+        input_Array(2 , p , q , b);
+
+        //Printing The 1st Array
+        print_Arrays( m , n , a);
+
+        //Printing The 2nd Array
+        print_Arrays( p , q , b);
+
+        //Multiplication Of Given Arrays
+        for(int i = 0; i < m ; i++){
+            for(int j = 0; j < q ; j++){
+                res[i][j] = 0;
+                    for(int k = 0 ; k < n ; k++){
+                            res[i][j] += a[i][k] * b[k][j];
+                    }
+                }
+            }
+        printf("\n");
+        //Printing The Resultant Array
+       print_Arrays( m , q , res);
+    }
+    else {
+        printf("For Multiplication OF Matrix the column Of 1st Matrix Should be Equal To row of 2nd matrix\n");
+    }
+    return 0;}
+
+        // Function To Print Arrays
+        void print_Arrays(int r, int c, int store[r][c]){
+            for(int i = 0; i < r ; i++){
+                for(int j = 0; j < c ; j++){
+                    printf("%d\t",store[i][j]);
+                }printf("\n");
+            }printf("\n");
+        }
+        // Function To Take Input For Arrays
+        void input_Array(int numarr , int r, int c, int store[r][c]){
+             printf("Enter The Elements of %d Array\n",numarr);
+             printf("Remember The Order is (%d,%d)\n",r , c);
+                for(int i = 0 ; i < r ; i++){
+                    for(int j = 0 ; j < c ; j++){
+                        scanf("%d",&store[i][j]);
+                        }
+                    }
+                }
+
+
