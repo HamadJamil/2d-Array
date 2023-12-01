@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main(){
+    int r = 0 , c = 0;                              //Declaring and Defining Variables For row & columns
+                                      //Declaring Array for storing Transpose
+
+    //Taking Input of Rows & Columns
+    printf("Enter The Number Of rows\n");
+    scanf("%d",&r);
+    printf("Enter The Number Of Columns\n");
+    scanf("%d",&c);
+
+    //Declaring Array For Primary Matrix
+    int arr[r][c];
+    //Declaring Array For Resultant Matrix
+    int brr[c][r];
+
+    //Taking Input Of Elements of Array
+    printf("Enter The Elements Of Array\n");
+    for(int i = 0 ; i < r ; i++){                        //External Loop run Upto r
+        for(int j = 0 ; j < c ; j++){                   //External Loop run Upto c
+            scanf("%d",&arr[i][j]);
+        }
+    }printf("\n");
+
+    //Storing Transpose Elements Into 2nd Matrix
+    for(int i = 0 ; i < c ; i++){
+        for(int j = 0 ; j < r ; j++){
+            brr[i][j] = arr[j][i];
+        }
+    }
+
+    //Printing Elements After Transpose
+    for(int i = 0 ; i < c ; i++){
+        for(int j = 0 ; j < r ; j++){
+            printf("%d ",brr[i][j]);
+        }printf("\n");
+    }
+
+return 0;}
